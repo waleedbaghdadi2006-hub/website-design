@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in -WS </title>
+    <link rel="stylesheet" href="../Css/Sign_in.css">
+     <!-- <link rel="stylesheet" href="/CSS/test.css"> -->
+</head>
+<body>
+
+    <div class="container">
+        <div class="column1">
+            <!-- Content for column 1 -->
+             <header>
+                <h1>supplements</h1>
+             </header>
+            <main>
+                <h1>welcome back</h1>
+                <p>Please eneter your deteils</p>
+                <form action="../Php/Sign_in.php" method="post">
+                    <label for="username" >Email address</label>
+                    <input type="email" id="email" name="username" required>
+    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="remember-me">
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox">Remember me for 30 days</label>
+                        <a href="www.youtube.com">Forgot your password?</a>
+                    </div>
+    
+                    <button type="submit">Sign In</button>
+                    <p id="sign-up-link">Don't have an account? <a  href="sign_up.html">Sign up</a></p>
+
+                </form>
+              
+            </main>
+                <footer>
+                    <p>&copy; 2026  Supplements. All rights reserved.</p>
+                </footer>
+
+        </div>
+        <div class="column2">
+            <!-- Content for column 2 -->
+        </div>
+    </div>
+
+</body>
+</html>
