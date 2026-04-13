@@ -1,9 +1,11 @@
 body {
-	margin: 0;
+    margin: 0;
 	padding: 0;
 	min-height: 100vh;
 	box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: initial;
+    color: rgb(182, 188, 194);
+    font-size: 20px;
 }
 
 .container {
@@ -21,7 +23,7 @@ body {
 }
 
 .column1 {
-	background: #f0f0f0;
+	background: #2f2e2e;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -29,7 +31,7 @@ body {
 }
 
 .column2 {
-	background: #e0e0e0;
+	background: #014c89;
 }
 /*tell me if you want to add a logo before the header */
 .column1 header {
@@ -38,17 +40,20 @@ body {
 	margin-bottom: 30px;
 }
 .column1 header h1 {
-    padding-left: 48px;
+    padding-left: 20px;
     position: absolute;
-    top: 43px;
+    top: 40px;
     left: 24px;
     margin: 0;
     text-transform: uppercase;
-	
+	font-style: unset;
+    font-family:cursive;
+    font-size: 35px;
+    color:rgba(30,144,255,0.8);
 }
 
 .column1 main {
-	    flex: 0 0 80%;
+    flex: 0 0 80%;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -115,9 +120,6 @@ label
 .remember-me label {
     margin-right: 120px;
 }
-.remember-me label {
-    margin-right: 120px;
-}
 
 .remember-me,
 .remember-me label,
@@ -138,11 +140,13 @@ label
     cursor: pointer;
 }
 button[type="submit"] {
-   width: 324px;
+    width: 324px;
     position: relative;
     left: 20px;
     border: none;
-    background-color: #f29494;
+    background-color: rgba(30,144,255,0.8);
+    color: rgb(182, 188, 194);
+    font-weight: bolder;
     padding-bottom: 10px;
     padding-top: 10px;
     border-radius: 10px;
@@ -150,9 +154,51 @@ button[type="submit"] {
     cursor: pointer;
     margin-bottom: 30px;
 }
-.column2{
-    
-    background-color: rgb(45, 121, 243);
-    /*build your own design here 😊*/
-    
+a{
+    color:rgba(30,144,255,0.8) ;
+}
+.column2 {
+  flex: 1;
+  height: 100vh;
+
+
+  background: url("https://images.unsplash.com/photo-1558611848-73f7eb4001a1") no-repeat center;
+  background-size: cover;
+
+  position: relative;
+}
+
+
+.column2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(30, 143, 255, 0.582), rgba(10, 62, 145, 0.705));
+}
+
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.overlay h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 18px;
+  opacity: 0.9;
 }
