@@ -6,12 +6,13 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
 }
-a
-{
+
+a {
     text-decoration: none;
     color: inherit;
 
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -101,7 +102,7 @@ nav ul {
     right: 0;
     width: 100%;
     background-color: white;
-    box-shadow: 0px 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
     display: none;
     z-index: 99;
     border-top: 1px solid #eee;
@@ -159,8 +160,8 @@ nav:has(.nav-item[data-dropdown="creatine"]:hover) #creatine,
     border-bottom: 1px solid #f0f0f0;
     cursor: pointer;
     transition: background 0.2s;
-    text-decoration: none; 
-    color: inherit; 
+    text-decoration: none;
+    color: inherit;
 }
 
 
@@ -191,8 +192,9 @@ nav:has(.nav-item[data-dropdown="creatine"]:hover) #creatine,
     font-weight: 500;
     color: #333;
 }
+
 main {
-    flex: 1;
+
     background-color: #ffffff;
 }
 
@@ -229,17 +231,22 @@ main {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 /* --- Product Card --- */
+
 .product-card {
     background-color: #f5f5f5;
     border-radius: 12px;
     padding: 20px;
     transition: all 0.3s ease;
     position: relative;
+    height: 510px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .product-card:hover {
@@ -291,6 +298,17 @@ main {
     max-width: 90%;
     max-height: 90%;
     object-fit: contain;
+}
+
+.video-section {
+    width: 290px;
+    height: 550px;
+}
+
+.video-player__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .shopping-bag-btn {
