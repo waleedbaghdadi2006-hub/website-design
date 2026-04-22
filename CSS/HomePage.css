@@ -6,12 +6,13 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
 }
-a
-{
+
+a {
     text-decoration: none;
     color: inherit;
 
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -101,7 +102,7 @@ nav ul {
     right: 0;
     width: 100%;
     background-color: white;
-    box-shadow: 0px 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
     display: none;
     z-index: 99;
     border-top: 1px solid #eee;
@@ -159,8 +160,8 @@ nav:has(.nav-item[data-dropdown="creatine"]:hover) #creatine,
     border-bottom: 1px solid #f0f0f0;
     cursor: pointer;
     transition: background 0.2s;
-    text-decoration: none; 
-    color: inherit; 
+    text-decoration: none;
+    color: inherit;
 }
 
 
@@ -191,6 +192,7 @@ nav:has(.nav-item[data-dropdown="creatine"]:hover) #creatine,
     font-weight: 500;
     color: #333;
 }
+
 .hero-slider {
     position: relative;
     width: 100%;

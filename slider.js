@@ -52,3 +52,4 @@ function resetAutoSlide() {
 const sliderContainer = document.querySelector('.hero-slider');
 sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
 sliderContainer.addEventListener('mouseleave', () => startAutoSlide());
+
