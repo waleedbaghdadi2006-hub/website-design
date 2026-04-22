@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM products ";
+$sql = "SELECT * FROM products where category like 'protein' and quantity > 0 ";
 $result = $conn->query($sql);
 ?>
 <?php session_start(); ?>
@@ -28,7 +28,7 @@ $result = $conn->query($sql);
 
 <body>
     <div class="container">
-<body>
+   <body>
     <div class="container">
         <header>
             <div class="head_container">
@@ -219,8 +219,19 @@ $result = $conn->query($sql);
                 <div class="section-wrapper">
                     <div class="main-content">
                         <div class="productDiscription">
-                            <h1>All Products</h1>
-                         
+                            <h1>Proteins</h1>
+                            <div id="description">
+                                <span>
+                                    <p>Proteins for athletes – are you looking for high-quality protein powder for ideal
+                                        nutrition that matches your
+                                        goals and needs? Found it! Here you will find our best protein
+                                        powders for creamy shakes and refreshingly clear protein drinks –
+                                        regardless of whether you are looking for support during diet phases or
+                                        optimal support for building and maintaining muscle, and regardless of whether
+                                        you are looking for animal or plant proteins – developed by experts and pros.
+                                        Made for athletes.</p>
+                                </span>
+                            </div>
                         </div>
                         <div class="shopify-section">
                             <div class="product-grid">

@@ -24,19 +24,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
 
-        if ($password == $row['password'] && $row['role']=="admin" ) {
-            $_SESSION['username'] = $username;
-            header("Location: admin.php"); // إعادة التوجيه إلى صفحة الترحيب بعد تسجيل الدخول
-            exit();
-        }
-        else if ($password == $row["password"] && $row['role']=="user" ) 
-            {
-            $_SESSION['username'] = $username;
-            header("Location: productPage.php"); // إعادة التوجيه إلى صفحة الترحيب بعد تسجيل الدخول
-            exit();
+        if ($password == $row['password']) {
+            // FIX: Store the actual user's info from the DB row, not the DB root username
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['username'] = $row['email'];
+            $_SESSION['user_role'] = $row['role'];
 
+            if ($row['role'] == "admin") {
+                header("Location: admin.php");
+                exit();
+            } else {
+                header("Location: HomePage.php");
+                exit();
             }
-         else {
+        } 
+        else 
+        {
             $error_message = "Invalid password.";
         }
     } else {
@@ -46,10 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 // إذا كان المستخدم مسجلاً الدخول، يمكنك توجيهه إلى صفحة الترحيب مباشرة
-// if (isset($_SESSION['username'])) {
-//     header("Location: we.php");
-//     exit();
-// }
+if (isset($_SESSION['username'])) {
+    header("Location: HomePage.php");
+    exit();
+}
 
 $conn->close();
 ?>
@@ -61,7 +64,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in -WS </title>
     <link rel="stylesheet" href="CSS/SignIn.css">
-  
+
 
 </head>
 
@@ -89,7 +92,7 @@ $conn->close();
                     </div>
 
                     <button type="submit">Sign In</button>
-                    <p id="sign-up-link">Don't have an account? <a href="SingUp.php">Sign up</a></p>
+                    <p id="sign-up-link">Don't have an account? <a href="SignUp.php">Sign up</a></p>
 
 
                 </form>

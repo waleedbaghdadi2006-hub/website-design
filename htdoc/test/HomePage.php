@@ -1,20 +1,3 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "test";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM products ";
-$result = $conn->query($sql);
-?>
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,11 +6,9 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy proteins powder & shakes | Protein from supplements </title>
-    <link rel="stylesheet" href="Css/productPage.css">
+    <link rel="stylesheet" href="Css/HomePage.css">
 </head>
 
-<body>
-    <div class="container">
 <body>
     <div class="container">
         <header>
@@ -215,104 +196,73 @@ $result = $conn->query($sql);
             </div>
         </nav>
         <main>
-            <div class="product-section">
-                <div class="section-wrapper">
-                    <div class="main-content">
-                        <div class="productDiscription">
-                            <h1>All Products</h1>
-                         
+            <section class="hero-slider">
+                <div class="slider-container">
+                    <div class="slide active">
+                        <img src="images/KW15_HeroTeaser_Desktop_1920x720_Proben.jpg" alt="Proben">
+                        <div class="slide-content">
+                            <h2>-50% OFF SAMPLES</h2>
+                            <p>Try Designer Whey, Isoclear & more - perfect for testing and on the go</p>
+                            <a href="https://www.google.com" class="save-now-btn">SAVE NOW</a>
                         </div>
-                        <div class="shopify-section">
-                            <div class="product-grid">
-                                <!-- Product 1 -->
-                                <div>
-                                    <div class="video-section   ">
-
-                                        <video controlslist="nofullscreen" crossorigin="anonymous"
-                                            disablepictureinpicture="true" loop="" playsinline="true" preload="false"
-                                            autoplay="" class="video-player__video">
-                                            <source src="videos/Buy protein powder & shakes - Protein from ESN.mp4">
-                                            <!---->
-                                        </video>
-                                    </div>
-
-                                </div>
-
-
-
-                                <?php
-                                if ($result->num_rows > 0) {
-                                    while ($row = $result->fetch_assoc()) {
-                                        ?>
-                                        <div class="product-card">
-                                            <div class="product-header">
-                                                <?php if ($row['bestseller']) { ?>
-                                                    <span class="bestseller-badge">Bestseller</span>
-                                                <?php } else { ?>
-                                                    <span class="bestseller-badge" style="visibility:hidden;"></span>
-                                                <?php } ?>
-
-                                                <button class="heart-btn">♡</button>
-                                            </div>
-
-                                            <div class="image-container">
-                                                <img src="images/<?php echo $row['image']; ?>"
-                                                    alt="<?php echo $row['name']; ?>">
-                                            </div>
-                                            <?php if (isset($_SESSION['username'])): ?>
-                                                <form action="addToCart.php" method="post">
-
-
-                                                    <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
-
-                                                    <button class="shopping-bag-btn" type="submit" name="addToCart">🛍</button>
-                                                </form>
-                                            <?php else: ?>
-                                                <button class="shopping-bag-btn" type="submit" name="addToCart"
-                                                    onclick="alert('You must be logged in to add items to your cart!')">🛍</button>
-                                            <?php endif; ?>
-
-
-                                            <!-- <button class="shopping-bag-btn">🛍</button> -->
-
-                                            <div class="product-info">
-                                                <p class="flavors"><?php echo $row['flavors']; ?> Flavours</p>
-                                                <h3><?php echo $row['name']; ?></h3>
-                                                <p class="description"><?php echo $row['description']; ?></p>
-
-                                                <div class="rating">
-                                                    <span class="stars">★★★★☆</span>
-                                                    <span class="review-count">(<?php echo $row['reviews']; ?>)</span>
-                                                </div>
-
-                                                <p class="price">
-                                                    €<?php echo $row['price']; ?>
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <?php
-                                    }
-                                } else {
-                                    echo "<p>No products found</p>";
-                                }
-                                ?>
-
-
-
-
-
-
-                            </div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/KW15_HeroTeaser_Desktop_1920x720_Athlete.jpg" alt="Athlete">
+                        <div class="slide-content">
+                            <h2>FUEL YOUR PERFORMANCE</h2>
+                            <p>Premium supplements for elite athletes and fitness enthusiasts</p>
+                            <a href="https://www.google.com" class="save-now-btn">SHOP NOW</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/KW15_HeroTeaser_Desktop_1920x720_Bars_UK_1_34dd3315-0ae7-4022-a8fd-c9aea04cf192.jpg"
+                            alt="Bars">
+                        <div class="slide-content">
+                            <h2>PROTEIN BARS</h2>
+                            <p>Delicious snacks with high protein content for your daily needs</p>
+                            <a href="https://www.google.com" class="save-now-btn">EXPLORE</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/KW15_HeroTeaser_Desktop_1920x720_Vitals_1.jpg" alt="Vitals">
+                        <div class="slide-content">
+                            <h2>DAILY VITALS</h2>
+                            <p>Everything your body needs to stay healthy and strong</p>
+                            <a href="https://www.google.com" class="save-now-btn">VIEW ALL</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/KW10_HeroTeaser_Desktop_1920x720_Referafriend.jpg" alt="Refer a friend">
+                        <div class="slide-content">
+                            <h2>REFER A FRIEND</h2>
+                            <p>Share the love and get rewards for every successful referral</p>
+                            <a href="https://www.google.com" class="save-now-btn">LEARN MORE</a>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <!-- Slider Navigation -->
+                <div class="slider-nav">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+
+                <!-- Pause/Play Icon (Optional visual match) -->
+                <div class="slider-controls">
+                    <svg class="pause-icon" viewBox="0 0 24 24">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                    </svg>
+                </div>
+            </section>
         </main>
-
+        <footer>
+            <p>&copy; 2026 Supplements Store</p>
+        </footer>
     </div>
-
+    <script src="slider.js"></script>
 </body>
-
 
 </html>

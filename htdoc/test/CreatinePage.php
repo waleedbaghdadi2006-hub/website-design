@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM products ";
+$sql = "SELECT * FROM products where category like 'creatine' and quantity > 0 ";
 $result = $conn->query($sql);
 ?>
 <?php session_start(); ?>
@@ -28,7 +28,7 @@ $result = $conn->query($sql);
 
 <body>
     <div class="container">
-<body>
+      <body>
     <div class="container">
         <header>
             <div class="head_container">
@@ -219,8 +219,18 @@ $result = $conn->query($sql);
                 <div class="section-wrapper">
                     <div class="main-content">
                         <div class="productDiscription">
-                            <h1>All Products</h1>
-                         
+                            <h1>Creatine</h1>
+                            <div id="description">
+                                <span>
+                                    <p>Do you want to build muscle more effectively and optimize your performance? Then
+                                        we recommend creatine: In addition to many other positive effects, a daily
+                                        intake of just 3 g can increase physical performance.[¹] Creatine is therefore
+                                        quite rightly considered one of the most important sports supplements. This is
+                                        also confirmed by the International Society of Sports Nutrition (ISSN).[²] So,
+                                        what are you waiting for? Discover our high-quality creatine products here and
+                                        take your performance to the next level!</p>
+                                </span>
+                            </div>
                         </div>
                         <div class="shopify-section">
                             <div class="product-grid">
