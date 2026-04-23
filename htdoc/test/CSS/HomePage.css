@@ -30,6 +30,52 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+.centerOfHeader
+{
+    width: 50%;
+
+
+}
+/* Container for the search bar */
+
+.search-container {
+  display: flex;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 25px; /* Creates the rounded look */
+  overflow: hidden; /* Ensures inner elements follow the rounded border */
+  transition: border-color 0.3s ease;
+}
+
+/* Style the input field */
+.search-input {
+  flex-grow: 1; /* Fills remaining space */
+  border: none;
+  padding: 10px 20px;
+  outline: none; /* Removes the default blue outline on focus */
+  font-size: 16px;
+}
+
+/* Style the search button */
+.search-button {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+/* Interaction Effects */
+.search-container:focus-within {
+  border-color: #2196F3; /* Highlights the container when typing */
+}
+
+.search-button:hover {
+  background-color: #0b7dda; /* Darkens button on hover */
+}
+
 
 .head_container svg {
     width: 35px;

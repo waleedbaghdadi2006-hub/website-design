@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $full_name = trim($_POST['full_name']);
   $email = trim($_POST['email']);
   $password_plain = $_POST['password'];
+  $hashed_password = password_hash($password_plain, PASSWORD_DEFAULT);
   $phone = trim($_POST['phone']);
 
   // Basic validation
@@ -39,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // Insert new user (plain text password - matches your login comparison)
       // Role defaults to 'user'
       $insert_sql = "INSERT INTO users (full_name, email, password, phone, role) 
-                           VALUES ('$full_name', '$email', '$password_plain', '$phone', 'user')";
+                           VALUES ('$full_name', '$email', '$hashed_password', '$phone', 'user')";
 
       if ($conn->query($insert_sql) === TRUE) {
         $success_message = "Account created successfully! You can now <a href='login.php'>sign in</a>.";

@@ -48,6 +48,59 @@ header {
     font-weight: 800;
 }
 
+.centerOfHeader {
+    width: 50%;
+
+
+}
+
+/* Container for the search bar */
+
+.search-container {
+    display: flex;
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    /* Creates the rounded look */
+    overflow: hidden;
+    /* Ensures inner elements follow the rounded border */
+    transition: border-color 0.3s ease;
+}
+
+/* Style the input field */
+.search-input {
+    flex-grow: 1;
+    /* Fills remaining space */
+    border: none;
+    padding: 10px 20px;
+    outline: none;
+    /* Removes the default blue outline on focus */
+    font-size: 16px;
+}
+
+/* Style the search button */
+.search-button {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Interaction Effects */
+.search-container:focus-within {
+    border-color: #2196F3;
+    /* Highlights the container when typing */
+}
+
+.search-button:hover {
+    background-color: #0b7dda;
+    /* Darkens button on hover */
+}
+
+
 /* --- Navigation Bar --- */
 nav {
     width: 100%;
@@ -227,12 +280,16 @@ main {
 
 .shopify-section {
     margin-top: 20px;
+    border-top: 1px solid black;
+    padding-top: 30px;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: auto repeat(3, 1fr);
+    gap: 15px;
+    width: 90%;
+    gap: 30px;
 }
 
 /* --- Product Card --- */
@@ -255,9 +312,11 @@ main {
 
 .product-header {
     display: flex;
+
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .bestseller-badge {
@@ -303,12 +362,14 @@ main {
 .video-section {
     width: 290px;
     height: 550px;
+
 }
 
 .video-player__video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 20px;
 }
 
 .shopping-bag-btn {

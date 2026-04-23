@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM products ";
+$sql = "SELECT * FROM products where category like 'Vitamin' and quantity > 0 ";
 $result = $conn->query($sql);
 ?>
 <?php session_start(); ?>
@@ -28,7 +28,7 @@ $result = $conn->query($sql);
 
 <body>
     <div class="container">
-<body>
+   <body>
     <div class="container">
         <header>
             <div class="head_container">
@@ -219,8 +219,15 @@ $result = $conn->query($sql);
                 <div class="section-wrapper">
                     <div class="main-content">
                         <div class="productDiscription">
-                            <h1>All Products</h1>
-                         
+                            <h1>Vitamins & more</h1>
+                            <div id="description">
+                                <span>
+                                    <p>These valuable micronutrients ensure that you are always fully supplied. This way
+                                        you can fight deficiencies, look after your body and strengthen your immune
+                                        system. Discover our wide range of vitamins, minerals, omega-3 fatty acids and
+                                        much more.</p>
+                                </span>
+                            </div>
                         </div>
                         <div class="shopify-section">
                             <div class="product-grid">
