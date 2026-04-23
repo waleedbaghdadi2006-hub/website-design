@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+}
+body {
+    margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	box-sizing: border-box;
+    font-family: initial;
+    color: rgb(182, 188, 194);
+    background: #2f2e2e;
+    font-size: 20px;
+}
+.sidebar {
+    width: 280px;
+    background: linear-gradient(180deg, #162a57 0%, #020617 75%);
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    padding: 25px 0;
+    /* border-left: 1px solid rgba(0, 68, 255, 0.395); */
+    z-index: 100;
+}
+.logo-area {
+    text-align: center;
+    padding: 0 20px 25px;
+    border-bottom: 2px solid #014c89;
+    margin-bottom: 30px;
+}
+
+.logo-area img{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 25px;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin: 5px 15px;
+    border-radius: 12px;
+}
+
+.nav-item i {
+    width: 24px;
+    font-size: 20px;
+}
+
+.nav-item:hover, .nav-item.active {
+    background: linear-gradient(90deg, #001aff45, #ffd70005);
+    color:  rgba(30,144,255,0.8);
+    border-right: 3px solid  rgba(30,144,255,0.8);
+}
+.main-content {
+    margin-right: 280px;
+    padding: 10px 10px;
+}
+.admin-header {
+    background: linear-gradient(180deg, #162a57 0%, #020617 100%);
+    padding: 15px 25px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border: 1px solid #334155;
+    color:rgba(30,144,255,0.8) ;
+}
+.admin-header i {
+    color: rgb(182, 188, 194);
+}
+/* .add-product-btn {
+    background: linear-gradient(#0a6ee0 0%);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 40px;
+    color: #0f172a;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    /* transition: 0.3s; 
+} */
+
+.add-product-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 81, 255, 0.299);
+}
+
+.product-form-container {
+    background: #1e293b;
+    /* background: linear-gradient(180deg, #162a57 0%, #020617 100%); */
+    border-radius: 24px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid #334155; 
+}
+
+        /* .product-form-container.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        } */
+/* 
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        } */
+
+.form-title {
+    color: #0a6ee0;
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+        /* .form-group.full-width {
+            grid-column: span 2;
+        } */
+
+.form-group label {
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.form-group input, .form-group select {
+    background: #0f172a;
+    border: 1px solid #334155;
+    padding: 12px;
+    border-radius: 12px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+        /* .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #ffd700;
+        } */
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btn-save {
+    background: linear-gradient(#0a6ee0 0%);
+    color: rgb(182, 188, 194);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background: #334155;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.products-table-wrapper {
+    background: #1e293b;
+    border-radius: 24px;
+    padding: 20px;
+    overflow-x: auto;
+    border: 1px solid #334155;
+    width: 100%;
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.products-table th {
+    text-align: center;
+    padding: 15px 12px;
+    color: rgba(30,144,255,0.8);
+    border-bottom: 2px solid #334155;
+}
+
+.products-table td {
+    padding: 15px 12px;
+    color: #cbd5e1;
+    border-bottom: 1px solid #2d3a4e;
+}
+
+        .product-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+.stock-badge {
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.stock-high {
+    background: #15803d20;
+    color: #4ade80;
+    border: 1px solid #4ade80;
+}
+
+.stock-low {
+    background: #eab30820;
+    color: #facc15;
+    border: 1px solid #facc15;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.edit-btn {
+    background: #3b82f620;
+    color: #60a5fa;
+}
+
+.delete-btn {
+    background: #ef444420;
+    color: #f87171;
+}
+
+        .edit-btn:hover, .delete-btn:hover {
+            transform: scale(1.05);
+        }
+
+footer {
+	flex: 0 0 10%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#name,#price,#description,#add{
+    width: 320px;
+    height: 40px;
+    position: relative;
+    left: 20px;
+    margin-top: 16px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 25px;
+
+}
+
+    /* @media (max-width: 1024px) {
+            .sidebar {
+                width: 80px;
+            }
+            .logo-area h2, .logo-area p, .nav-item span {
+                display: none;
+            }
+            .main-content {
+                margin-right: 80px;
+            }
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            } 

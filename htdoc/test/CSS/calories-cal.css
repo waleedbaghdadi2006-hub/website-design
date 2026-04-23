@@ -1,0 +1,39 @@
+body {
+  font-family: Arial;
+  background: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: rgb(182, 188, 194)
+}
+
+.container {
+  background: linear-gradient(180deg, #162a57 0%, #020617 75%);
+  padding: 200px;
+  border-radius: 20px;
+  width: 800px;
+}
+
+input, select, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}
+
+button {
+  background: #0a6ee0;
+  color: rgb(182, 188, 194);
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #485a84;
+}
+
+#result {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+}
