@@ -5,9 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy proteins powder & shakes | Protein from supplements </title>
+    <title>About Us | Premium Supplements Store</title>
     <link rel="stylesheet" href="Css/HomePage.css">
     <link rel="stylesheet" href="Css/Header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Css/AboutUs.css">
+    
+    <link rel="stylesheet" href="Css/Footer.css">
 </head>
 
 <body>
@@ -27,7 +31,6 @@
                 </div>
                 <div class="RightSideOfHeader">
                     <?php if (isset($_SESSION['username'])): ?>
-                        <!-- CART SVG (Visible when signed in) -->
                         <a href="viewCart.php" class="icon-link" title="View Cart">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -36,7 +39,6 @@
                                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                             </svg>
                         </a>
-                        <!-- LOGOUT SVG (Visible when signed in) -->
                         <a href="logout.php" class="icon-link" title="Logout">
                             <svg class="icon-logout" viewBox="0 0 24 24" width="24" height="24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -46,7 +48,6 @@
                             </svg>
                         </a>
                     <?php else: ?>
-                        <!-- SIGN IN SVG (Visible when not signed in) -->
                         <a href="SignIn.php" class="icon-link" title="Sign In">
                             <svg class="icon-signin" viewBox="0 0 24 24" width="24" height="24" fill="none"
                                 stroke="currentColor" stroke-width="2">
@@ -61,6 +62,7 @@
                 </div>
             </div>
         </header>
+
         <nav>
             <ul class="nav-list">
                 <li class="nav-item">
@@ -82,7 +84,7 @@
                 </li>
             </ul>
 
-            <!-- Full-width dropdown containers -->
+            <!-- Dropdown menus (same as before) -->
             <div class="dropdown-full-width" id="proteins">
                 <div class="dropdown-inner">
                     <div class="dropdown-section">
@@ -90,7 +92,6 @@
                         <a href="ProteinPage.php">
                             <p class="view-all">View All</p>
                         </a>
-
                         <div class="bestsellers">
                             <h4>Protein Bestsellers</h4>
                             <a href="https://www.google.com" class="product-item">
@@ -161,7 +162,6 @@
                         <a href="CreatinePage.php">
                             <p class="view-all">View All</p>
                         </a>
-
                         <div class="bestsellers">
                             <h4>Creatine Bestsellers</h4>
                             <a href="https://www.google.com" class="product-item">
@@ -190,70 +190,103 @@
                 </div>
             </div>
         </nav>
-        <main>
-            <section class="hero-slider">
-                <div class="slider-container">
-                    <div class="slide active">
-                        <img src="images/KW15_HeroTeaser_Desktop_1920x720_Proben.jpg" alt="Proben">
-                        <div class="slide-content">
-                            <h2>-50% OFF SAMPLES</h2>
-                            <p>Try Designer Whey, Isoclear & more - perfect for testing and on the go</p>
-                            <a href="https://www.google.com" class="save-now-btn">SAVE NOW</a>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="images/KW15_HeroTeaser_Desktop_1920x720_Athlete.jpg" alt="Athlete">
-                        <div class="slide-content">
-                            <h2>FUEL YOUR PERFORMANCE</h2>
-                            <p>Premium supplements for elite athletes and fitness enthusiasts</p>
-                            <a href="https://www.google.com" class="save-now-btn">SHOP NOW</a>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="images/KW15_HeroTeaser_Desktop_1920x720_Bars_UK_1_34dd3315-0ae7-4022-a8fd-c9aea04cf192.jpg"
-                            alt="Bars">
-                        <div class="slide-content">
-                            <h2>PROTEIN BARS</h2>
-                            <p>Delicious snacks with high protein content for your daily needs</p>
-                            <a href="https://www.google.com" class="save-now-btn">EXPLORE</a>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="images/KW15_HeroTeaser_Desktop_1920x720_Vitals_1.jpg" alt="Vitals">
-                        <div class="slide-content">
-                            <h2>DAILY VITALS</h2>
-                            <p>Everything your body needs to stay healthy and strong</p>
-                            <a href="https://www.google.com" class="save-now-btn">VIEW ALL</a>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="images/KW10_HeroTeaser_Desktop_1920x720_Referafriend.jpg" alt="Refer a friend">
-                        <div class="slide-content">
-                            <h2>REFER A FRIEND</h2>
-                            <p>Share the love and get rewards for every successful referral</p>
-                            <a href="https://www.google.com" class="save-now-btn">LEARN MORE</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Slider Navigation -->
-                <div class="slider-nav">
-                    <span class="dot active" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                    <span class="dot" onclick="currentSlide(5)"></span>
-                </div>
-
-                <!-- Pause/Play Icon (Optional visual match) -->
-                <div class="slider-controls">
-                    <svg class="pause-icon" viewBox="0 0 24 24">
-                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                    </svg>
+        <main class="about-main">
+            <!-- Hero Section -->
+            <section class="about-hero">
+                <div class="hero-content">
+                    <h1>About Premium Supplements Store</h1>
+                    <p>Your Trusted Partner in Health & Fitness Since 2015</p>
                 </div>
             </section>
+
+            <!-- Our Story Section -->
+            <section class="our-story">
+                <div class="story-container">
+                    <div class="story-text">
+                        <h2>Our Story</h2>
+                        <p>Founded in 2015, Premium Supplements Store was born from a simple vision: to provide
+                            athletes, fitness enthusiasts, and health-conscious individuals with the highest quality
+                            supplements at competitive prices.</p>
+                        <p>What started as a small local shop has grown into a trusted online destination serving
+                            thousands of customers worldwide. Our commitment to excellence, quality, and customer
+                            satisfaction has been the driving force behind our success.</p>
+                        <p>Today, we pride ourselves on offering a carefully curated selection of premium supplements,
+                            including proteins, vitamins, creatine, and more – all sourced from reputable manufacturers
+                            and tested for purity and potency.</p>
+                    </div>
+                    <div class="story-image">
+                        <img src="images/logo.png" alt="Our Store">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mission & Vision Section -->
+            <section class="mission-vision">
+                <div class="mission-vision-container">
+                    <div class="mission-card">
+                        <div class="card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To empower individuals to achieve their fitness goals by providing premium quality
+                            supplements, expert guidance, and exceptional customer service at affordable prices.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To become the most trusted and accessible supplement retailer globally, recognized for our
+                            commitment to quality, innovation, and customer-centric solutions.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Our Values</h3>
+                        <p>Quality, Integrity, Innovation, and Customer Satisfaction. We believe in transparency,
+                            ethical business practices, and building long-term relationships with our customers.</p>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <h3>50,000+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>500+</h3>
+                        <p>Premium Products</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>9 Years</h3>
+                        <p>Industry Experience</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>24/7</h3>
+                        <p>Customer Support</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h2>Ready to Start Your Fitness Journey?</h2>
+                <p>Explore our wide range of premium supplements and find exactly what you need.</p>
+                <a href="productPage.php" class="cta-button">Shop Now</a>
+            </section>
         </main>
-        <footer class="footer-enhanced">
+
+        <!-- Footer -->
+             <footer class="footer-enhanced">
             <div class="footer-container">
                 <!-- Store Location Map Section -->
                 <div class="footer-section map-section">
@@ -370,7 +403,6 @@
             </div>
         </footer>
     </div>
-    <script src="slider.js"></script>
 </body>
 
 </html>

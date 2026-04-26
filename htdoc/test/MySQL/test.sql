@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2026 at 06:49 PM
+-- Generation Time: Apr 16, 2026 at 05:35 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,35 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_product`
---
-
-CREATE TABLE `order_product` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `order_date` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `order_product`
---
-
-INSERT INTO `order_product` (`id`, `user_id`, `product_id`, `order_date`) VALUES
-(4, 4, 1, '2026-04-22 08:03:09'),
-(5, 4, 2, '2026-04-22 08:20:27'),
-(6, 4, 1, '2026-04-22 08:22:07'),
-(7, 4, 1, '2026-04-22 09:17:46'),
-(8, 4, 1, '2026-04-22 09:19:11'),
-(9, 4, 3, '2026-04-22 09:24:12'),
-(10, 4, 3, '2026-04-22 09:45:28'),
-(11, 4, 3, '2026-04-22 09:45:38'),
-(12, 4, 3, '2026-04-22 09:46:05'),
-(13, 4, 3, '2026-04-22 09:46:15');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `products`
 --
 
@@ -63,8 +34,6 @@ CREATE TABLE `products` (
   `price` decimal(10,2) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `flavors` int(11) DEFAULT 0,
-  `quantity` int(11) DEFAULT NULL,
-  `category` varchar(255) DEFAULT NULL,
   `rating` decimal(2,1) DEFAULT 0.0,
   `reviews` int(11) DEFAULT 0,
   `bestseller` tinyint(1) DEFAULT 0,
@@ -75,10 +44,10 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `flavors`, `quantity`, `category`, `rating`, `reviews`, `bestseller`, `created_at`) VALUES
-(1, 'Whey Protein', 'High-quality protein for muscle growth', 29.99, 'Athletestack_Women_2024x2024_shop-wVywdtg2_8962e88f-2d92-4ec6-9b8b-d6d62113ee80.jpg', 5, 18, 'protein', 4.5, 120, 1, '2026-04-16 13:49:52'),
-(2, 'Creatine Monohydrate', 'Boost strength and performance', 19.99, 'Athletestack_Men_2024x2024_shop_1-z-ZiEbBu_bb4e3c6a-d2e4-4f8b-a9bc-cee333cce047.jpg', 1, 2, 'creatine', 4.7, 89, 1, '2026-04-16 13:49:52'),
-(3, 'Multivitamin', 'Daily essential vitamins', 14.99, 'Ashwa__120Caps_2024x2024_shop-ZiGfqmvZ_617765a7-6ae0-4a08-8e92-cc92773b2760.jpg', 3, 7, 'vitamin', 4.3, 45, 0, '2026-04-16 13:49:52');
+INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `flavors`, `rating`, `reviews`, `bestseller`, `created_at`) VALUES
+(1, 'Whey Protein', 'High-quality protein for muscle growth', 29.99, 'Athletestack_Women_2024x2024_shop-wVywdtg2_8962e88f-2d92-4ec6-9b8b-d6d62113ee80.jpg', 5, 4.5, 120, 1, '2026-04-16 13:49:52'),
+(2, 'Creatine Monohydrate', 'Boost strength and performance', 19.99, 'Athletestack_Men_2024x2024_shop_1-z-ZiEbBu_bb4e3c6a-d2e4-4f8b-a9bc-cee333cce047.jpg', 1, 4.7, 89, 1, '2026-04-16 13:49:52'),
+(3, 'Multivitamin', 'Daily essential vitamins', 14.99, 'Ashwa__120Caps_2024x2024_shop-ZiGfqmvZ_617765a7-6ae0-4a08-8e92-cc92773b2760.jpg', 3, 4.3, 45, 0, '2026-04-16 13:49:52');
 
 -- --------------------------------------------------------
 
@@ -111,14 +80,6 @@ INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `phone`, `role`, `c
 --
 
 --
--- Indexes for table `order_product`
---
-ALTER TABLE `order_product`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_user` (`user_id`),
-  ADD KEY `fk_product` (`product_id`);
-
---
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -136,12 +97,6 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `order_product`
---
-ALTER TABLE `order_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
@@ -152,17 +107,6 @@ ALTER TABLE `products`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `order_product`
---
-ALTER TABLE `order_product`
-  ADD CONSTRAINT `fk_product` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `fk_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

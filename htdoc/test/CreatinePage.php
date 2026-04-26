@@ -24,67 +24,62 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy proteins powder & shakes | Protein from supplements </title>
     <link rel="stylesheet" href="Css/productPage.css">
+    <link rel="stylesheet" href="Css/Header.css">
 </head>
 
 <body>
     <div class="container">
       <body>
     <div class="container">
-        <header>
-            <div class="head_container">
-                <div class="leftOfHeader">
-                    <h1><a href="#">supplements</a></h1>
-                </div>
-                <div class="centerOfHeader">
-                    <form class="search-container">
-                        <input type="text" placeholder="Search..." name="search" class="search-input">
-                        <button type="submit" class="search-button">Search</button>
-                    </form>
-
-                </div>
-                <div class="RightSideOfHeader">
-
-                    <?php if (isset($_SESSION['username'])): ?>
-                        <!-- LOGOUT SVG (Visible when signed in) -->
-                        <a href="viewCart.php">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <circle cx="9" cy="21" r="1"></circle>
-                                <circle cx="20" cy="21" r="1"></circle>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                            </svg>
-                        </a>
-                        <a href="logout.php" title="Logout">
-                            <svg class="icon-logout" viewBox="0 0 24 24" width="24" height="24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                                <polyline points="16 17 21 12 16 7" />
-                                <line x1="21" y1="12" x2="9" y2="12" />
-                            </svg>
-                        </a>
-                    <?php else: ?>
-                        <a href="SignIn.php" title="Sign In">
-
-
-                            <svg class="icon-signin" viewBox="0 0 24 24" width="24" height="24">
-                                <path d="M12 4a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM5 9a7 7 0 1 1 14 0A7 7 0 0 1 5 9Z"
-                                    fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path>
-                                <path
-                                    d="M12 16a9.504 9.504 0 0 0-8.229 4.75 1 1 0 0 1-1.732-1.001 11.503 11.503 0 0 1 19.922 0 1 1 0 1 1-1.732 1A9.504 9.504 0 0 0 12 16Z"
-                                    fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path>
-                            </svg>
-
-                        </a>
-                    <?php endif; ?>
-
-
-
-
-
-
-                </div>
-            </div>
-        </header>
+            <header>
+    <div class="head_container">
+        <div class="leftOfHeader">
+            <a href="HomePage.php" class="logo-link">
+                <img src="images/Logo.png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="centerOfHeader">
+            <form class="search-container">
+                <input type="text" placeholder="Search..." name="search" class="search-input">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+        <div class="RightSideOfHeader">
+            <?php if (isset($_SESSION['username'])): ?>
+                <!-- CART SVG (Visible when signed in) -->
+                <a href="viewCart.php" class="icon-link" title="View Cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </a>
+                <!-- LOGOUT SVG (Visible when signed in) -->
+                <a href="logout.php" class="icon-link" title="Logout">
+                    <svg class="icon-logout" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                </a>
+            <?php else: ?>
+                <!-- SIGN IN SVG (Visible when not signed in) -->
+                <a href="SignIn.php" class="icon-link" title="Sign In">
+                    <svg class="icon-signin" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M12 4a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM5 9a7 7 0 1 1 14 0A7 7 0 0 1 5 9Z"
+                            fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path>
+                        <path
+                            d="M12 16a9.504 9.504 0 0 0-8.229 4.75 1 1 0 0 1-1.732-1.001 11.503 11.503 0 0 1 19.922 0 1 1 0 1 1-1.732 1A9.504 9.504 0 0 0 12 16Z"
+                            fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path>
+                    </svg>
+                </a>
+            <?php endif; ?>
+        </div>
+    </div>
+</header>
         <nav>
             <ul class="nav-list">
                 <li class="nav-item">
@@ -102,7 +97,7 @@ $result = $conn->query($sql);
                     <div class="nav-link">creatine</div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www.google.com">About Us</a>
+                    <a class="nav-link" href="AboutUs.php">About Us</a>
                 </li>
             </ul>
 
